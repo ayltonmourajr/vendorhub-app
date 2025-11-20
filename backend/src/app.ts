@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import suppliersRouter from "./routes/Suppliers";
 
 export const app = express();
 
@@ -13,3 +14,5 @@ app.get("/health", (_req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+app.use("/api/suppliers", suppliersRouter);
